@@ -194,13 +194,13 @@ service ss5 restart
 echo ""
 echo "Socks5安装完毕！"
 echo ""
-echo "输入"s5"启动Socks5控制面板"
+echo "请使用客户端测试，如果问题请留言"
 echo ""
 echo "默认用户名: "${uname}
 echo "默认密码  : "${upasswd}
 echo "默认端口  : "${port}
 echo ""
-echo "请创建用户后再使用"
+echo "请测试后再使用"
 echo ""
 exit 0
 fi
