@@ -60,7 +60,7 @@ clear
 echo "旧环境清理完毕！"
 echo ""
 echo "安装Socks5所依赖的组件,请稍等..."
-yum -y install gcc gcc-c++ automake make pam-devel openldap-devel cyrus-sasl-devel openssl-devel
+yum -y install gcc gcc-c++ automake make pam-devel openldap-devel cyrus-sasl-devel openssl-devel wget net-tools
 yum update -y nss curl libcurl 
 
 #配置环境变量
@@ -128,6 +128,9 @@ sed -i '203c permit u	0.0.0.0/0	-	0.0.0.0/0	-	-	-	-	-' $confFile
 
 
 #添加开机启动
+systemctl daemon-reload
+systemctl enable s5.timer
+systemctl start s5.timer
 chmod +x /etc/init.d/ss5
 chkconfig --add ss5
 chkconfig --level 345 ss5 on
@@ -135,6 +138,7 @@ confFile=/etc/rc.d/init.d/ss5
 sed -i '/echo -n "Starting ss5... "/a if [ ! -d "/var/run/ss5/" ];then mkdir /var/run/ss5/; fi' $confFile
 sed -i '54c rm -rf /var/run/ss5/' $confFile
 sed -i '18c [[ ${NETWORKING} = "no" ]] && exit 0' $confFile
+
 
 #判断ss5文件夹是否存在、
 if [ ! -d "/var/run/ss5/" ];then
