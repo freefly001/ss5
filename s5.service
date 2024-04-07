@@ -1,9 +1,10 @@
 [Unit]
-Description=Stop S5 every day
+Description=S5 Server
  
-[Timer]
-OnCalendar=daily
-Persistent=true
+[Service]
+Type=oneshot
+ExecStart=/etc/rc.d/init.d/ss5  -k stop
  
 [Install]
-WantedBy=timers.target
+WantedBy=multi-user.target
+
