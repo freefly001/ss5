@@ -190,6 +190,7 @@ if [[ ${newVersion} = "7" ]] ; then
 systemctl daemon-reload
 fi
 service ss5 start
+service ss5 restart
 echo ""
 echo "Socks5安装完毕！"
 echo ""
