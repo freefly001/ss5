@@ -3,7 +3,7 @@
 
 resName="wyx176"
 serviceFile=/etc/opt/ss5/service.sh
-newVersionMsg=`curl -s -L  https://raw.githubusercontent.com/${resName}/Socks5/master/update.txt`
+newVersionMsg=`curl -s -L  https://github.com/freefly001/ss5/blob/main/version.txt`
 
 echo ""
 echo "1.启动"
@@ -64,7 +64,7 @@ if [[ $choice == 5 ]];then
 	echo " "
 	read -p "输入123开始更新,其它则取消： " c
 	if [[ "$c" == "123" ]];then
-	wget -q -N --no-check-certificate https://raw.githubusercontent.com/${resName}/Socks5/master/install.sh && bash install.sh
+	wget -q -N --no-check-certificate https://github.com/freefly001/ss5/blob/main/install-2.sh && bash install-2.sh
 	exit 0
 	else
 		clear
