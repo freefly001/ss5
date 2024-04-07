@@ -87,7 +87,7 @@ Download()
 echo ""
 echo "下载Socks5服务中..."
 cd  /root
-git clone https://github.com/wyx176/Socks5
+git clone https://github.com/freefly001/ss5
 }
 
 
@@ -199,7 +199,7 @@ echo "默认用户名: "${uname}
 echo "默认密码  : "${upasswd}
 echo "默认端口  : "${port}
 echo ""
-echo "添加Telegram群组@Socks55555及时获取更新"
+echo "请创建用户后再使用"
 echo ""
 exit 0
 fi
